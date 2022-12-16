@@ -1,0 +1,18 @@
+body {
+    margin: 0px;
+    /* min-height: 100vh; */
+}
+
+#root {
+    height: 100vh;
+}
+
+html {
+    font-size: 3.6px;
+    font-family: SUIT;
+}
+
+input,
+button {
+    font-family: SUIT;
+}
