@@ -6,6 +6,12 @@ import { channel, EVENTS } from '../channel'
 import { cartAtom } from '../jotai'
 import action from './action'
 
+const isEqualArray = <T extends unknown = unknown>(a: T[], b: T[]) =>
+    Array.isArray(a) &&
+    Array.isArray(b) &&
+    a.length === b.length &&
+    a.every((val, index) => val === b[index])
+
 export default () => {
     const [cart, setCart] = useAtom(cartAtom)
     const goto = useNavigate()
@@ -19,13 +25,24 @@ export default () => {
                     ? [productInfo.option]
                     : [],
             }
-            channel.postMessage(
-                JSON.stringify({
-                    event: EVENTS.ADD_PRODUCT,
-                    data: cartItem,
-                })
-            )
-            setCart((prev) => [...prev, cartItem])
+            channel.postMessage(JSON.stringify({ type: EVENTS.CLOSE_POPUP }))
+            setCart((prev) => {
+                if (
+                    prev.find(
+                        (p) =>
+                            p.product.id === productInfo.product.id &&
+                            isEqualArray(
+                                cartItem.optionComponation,
+                                p.optionComponation
+                            )
+                    )
+                ) {
+                    alert('이미 장바구니에 담겨있는 상품입니다')
+                    return prev
+                }
+
+                return [...prev, cartItem]
+            })
 
             goto('/cart')
         })

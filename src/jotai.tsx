@@ -1,11 +1,6 @@
 import { ProductType } from 'incart-fe-common'
+import { atomWithStorage } from 'jotai/utils'
 import { atom } from 'jotai'
-import { Doc } from './type'
+import { CartItemType, Doc } from './type'
 
-export const cartAtom = atom<
-    {
-        product: Doc<ProductType>
-        amount: number
-        optionComponation: string[]
-    }[]
->([])
+export const cartAtom = atomWithStorage<CartItemType[]>('CART', [])

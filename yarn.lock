@@ -1551,6 +1551,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@formkit/auto-animate@npm:1.0.0-beta.5":
+  version: 1.0.0-beta.5
+  resolution: "@formkit/auto-animate@npm:1.0.0-beta.5"
+  checksum: e0d7a799e802d37899650d9d5e307709e4911fa6af37191f5aad4b744f2a7d41d5ba5b66e95f7217ca305257146cbc09408ae1b5b1f3b829e5c208a881c5f34c
+  languageName: node
+  linkType: hard
+
 "@gar/promisify@npm:^1.1.3":
   version: 1.1.3
   resolution: "@gar/promisify@npm:1.1.3"
@@ -2849,7 +2856,7 @@ __metadata:
 
 "incart-fe-common@https://github.com/ryconics/incart-fe-common":
   version: 0.0.0
-  resolution: "incart-fe-common@https://github.com/ryconics/incart-fe-common.git#commit=fa4dc386f7cd4b34b48a06a4f74d79db8275523b"
+  resolution: "incart-fe-common@https://github.com/ryconics/incart-fe-common.git#commit=34a52f1fe58885a6d1c839220c0ac6748ab63a84"
   dependencies:
     "@haechi/flexile": "npm:^1.4.7"
     "@stitches/react": "npm:^1.2.8"
@@ -2863,7 +2870,7 @@ __metadata:
     formik: ^2.2.9
     react: ^18.0.0
     react-dom: ^18.0.0
-  checksum: 71091a01c4a6187025aca9b0056fe5e2238d970acd4bb99b675ffdab7ca768ca5d17cf1c3fb8287d81f80386b82327e7ca80ea79b728de4f0a1575705514e52d
+  checksum: 377ba65cef4af1b9a49469a95238fbd231efff6619336338d9449d580604a367d0217b16046f05850b54ae580e4d8434e77d1bd066daae6d7602c79e7a6ce2cc
   languageName: node
   linkType: hard
 
@@ -2871,6 +2878,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "incart-purchase@workspace:."
   dependencies:
+    "@formkit/auto-animate": "npm:1.0.0-beta.5"
     "@haechi/flexile": "npm:^1.4.7"
     "@stitches/react": "npm:^1.2.8"
     "@supabase/supabase-js": "npm:^2.2.0"

@@ -6,28 +6,20 @@ import { useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
 import { channel, EVENTS } from './channel'
 import { cartAtom } from './jotai'
+import { CartItemType } from './type'
 
 export default () => {
-    const [cart, setCart] = useAtom(cartAtom)
+    // const [cart, setCart] = useAtom(cartAtom)
 
     useEffect(() => {
         const handler = (message: MessageEvent<string>) => {
             const payload = JSON.parse(message.data) as {
-                event: string
+                type: string
                 data: unknown
             }
-            if (payload.event === EVENTS.CLOSE_POPUP) {
-                alert('열려있던 장바구니 팝업에 새 상품이 추가되었습니다')
+
+            if (payload.type === EVENTS.CLOSE_POPUP) {
                 window.close()
-            }
-            if (payload.event === EVENTS.ADD_PRODUCT) {
-                setCart((prev) => [
-                    ...prev,
-                    payload.data as typeof cart[number],
-                ])
-                channel.postMessage(
-                    JSON.stringify({ event: EVENTS.CLOSE_POPUP })
-                )
             }
         }
 
@@ -52,7 +44,7 @@ export default () => {
 
 const styles = {
     Wrapper: styled('div', {
-        padding: '9rem',
+        padding: '6rem',
         paddingBottom: '3rem',
         height: '100%',
         boxSizing: 'border-box',
