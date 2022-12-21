@@ -1,7 +1,8 @@
+import { getCartItemPrice } from '@/functions'
 import { Hexile, Vexile } from '@haechi/flexile'
 import { Header2, Text2 } from 'incart-fe-common'
 
-import { useEffect } from 'react'
+import { useEffect, useMemo } from 'react'
 import { CartItemType } from '../../type'
 import { useInlineInput } from '../InlineInput'
 import Styles from './styles'
@@ -12,7 +13,7 @@ export const CartItem: React.FC<{
     onRemoveItem: () => void
 }> = (props) => {
     const [changedAmount, input] = useInlineInput({
-        init: props.item.amount.toString(),
+        init: props.item.amount,
         type: 'number',
         min: 0,
         step: 1,
@@ -26,9 +27,13 @@ export const CartItem: React.FC<{
             },
         },
     })
+
     useEffect(() => {
-        props.setAmount(+changedAmount)
+        props.setAmount(changedAmount)
     }, [changedAmount])
+
+    const price = useMemo(() => getCartItemPrice(props.item), [props.item])
+
     return (
         <Vexile gap={1}>
             <Header2>{props.item.product.name}</Header2>
@@ -37,7 +42,7 @@ export const CartItem: React.FC<{
                     {props.item.product.options
                         ?.map(
                             (option, index) =>
-                                `${option.name}: ${props.item.optionComponation[index]}`
+                                `${option.name}: ${props.item.selectedOptions[index]}`
                         )
                         .join('\n')}
                 </Text2>
@@ -46,7 +51,7 @@ export const CartItem: React.FC<{
                         {input}
                         <Text2>개</Text2>
                     </Styles.AmountWrapper>
-                    <Text2>￦3,600</Text2>
+                    <Text2>￦{price.toLocaleString()}</Text2>
                     <Styles.Trash onClick={props.onRemoveItem} />
                 </Hexile>
             </Hexile>

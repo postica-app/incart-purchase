@@ -4,5 +4,5 @@ export type Doc<T> = T & { id: string }
 export interface CartItemType {
     product: Doc<ProductType>
     amount: number
-    optionComponation: string[]
+    selectedOptions: string[]
 }

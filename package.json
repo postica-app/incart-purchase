@@ -15,6 +15,7 @@
     "@supabase/supabase-js": "^2.2.0",
     "@svgr/rollup": "^6.5.1",
     "formik": "^2.2.9",
+    "immer": "^9.0.16",
     "incart-fe-common": "https://github.com/ryconics/incart-fe-common",
     "jotai": "^1.11.2",
     "react": "^18.2.0",

@@ -35,6 +35,7 @@ const RAW_RUNTIME_STATE =
           ["@types/react-dom", "npm:18.0.9"],\
           ["@vitejs/plugin-react", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#npm:3.0.0"],\
           ["formik", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#npm:2.2.9"],\
+          ["immer", "npm:9.0.16"],\
           ["incart-fe-common", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#https://github.com/ryconics/incart-fe-common.git#commit=34a52f1fe58885a6d1c839220c0ac6748ab63a84"],\
           ["jotai", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#npm:1.11.2"],\
           ["react", "npm:18.2.0"],\
@@ -4302,6 +4303,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["immer", [\
+      ["npm:9.0.16", {\
+        "packageLocation": "../../Users/rycon/AppData/Local/Yarn/Berry/cache/immer-npm-9.0.16-426ac657bc-9.zip/node_modules/immer/",\
+        "packageDependencies": [\
+          ["immer", "npm:9.0.16"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["import-fresh", [\
       ["npm:3.3.0", {\
         "packageLocation": "../../Users/rycon/AppData/Local/Yarn/Berry/cache/import-fresh-npm-3.3.0-3e34265ca9-9.zip/node_modules/import-fresh/",\
@@ -4375,6 +4385,7 @@ const RAW_RUNTIME_STATE =
           ["@types/react-dom", "npm:18.0.9"],\
           ["@vitejs/plugin-react", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#npm:3.0.0"],\
           ["formik", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#npm:2.2.9"],\
+          ["immer", "npm:9.0.16"],\
           ["incart-fe-common", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#https://github.com/ryconics/incart-fe-common.git#commit=34a52f1fe58885a6d1c839220c0ac6748ab63a84"],\
           ["jotai", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#npm:1.11.2"],\
           ["react", "npm:18.2.0"],\

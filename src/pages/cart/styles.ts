@@ -5,5 +5,6 @@ export default {
         gap: '6rem',
         display: 'flex',
         flexDirection: 'column',
+        flex: 1,
     }),
 }

@@ -8,17 +8,21 @@ const InputView = styled('input', {
     backgroundColor: 'transparent',
 })
 
-export const useInlineInput = ({
+export const useInlineInput = <T extends number | string>({
     init,
     ...props
-}: { init: string } & ComponentProps<typeof InputView>) => {
-    const [value, setValue] = useState(init)
+}: { init: T } & ComponentProps<typeof InputView>) => {
+    const [value, setValue] = useState<T>(init)
 
     return [
         value,
         <InputView
             defaultValue={init}
-            onChange={(event) => setValue(event.currentTarget.value)}
+            onChange={(event) => {
+                if (props.type === 'number')
+                    setValue(event.currentTarget.valueAsNumber as T)
+                else setValue(event.currentTarget.value as T)
+            }}
             {...props}
         />,
     ] as const

@@ -2837,6 +2837,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"immer@npm:^9.0.16":
+  version: 9.0.16
+  resolution: "immer@npm:9.0.16"
+  checksum: cba94dce2c4193ac32fc789749d7b009a7a5d922e2ffc447f1b62efa25d623836571393e920b09a9e2b352702e178a6c4e9cf9597754b43cb161f3927fbae704
+  languageName: node
+  linkType: hard
+
 "import-fresh@npm:^3.2.1":
   version: 3.3.0
   resolution: "import-fresh@npm:3.3.0"
@@ -2887,6 +2894,7 @@ __metadata:
     "@types/react-dom": "npm:^18.0.9"
     "@vitejs/plugin-react": "npm:^3.0.0"
     formik: "npm:^2.2.9"
+    immer: "npm:^9.0.16"
     incart-fe-common: "https://github.com/ryconics/incart-fe-common"
     jotai: "npm:^1.11.2"
     react: "npm:^18.2.0"

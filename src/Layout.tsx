@@ -44,12 +44,15 @@ export default () => {
 
 const styles = {
     Wrapper: styled('div', {
-        padding: '6rem',
         paddingBottom: '3rem',
-        height: '100%',
+        padding: '6rem',
+
         boxSizing: 'border-box',
-        display: 'flex',
+        height: '100%',
+
         flexDirection: 'column',
+        display: 'flex',
+        gap: '3rem',
     }),
     TextLogo: styled(_TextLogo, {
         width: '15rem',
