@@ -1,14 +1,15 @@
-import emptyHandImage from 'incart-fe-common/src/images/empty-hand.png'
+import { ReactComponent as Cart } from 'incart-fe-common/src/icons/Cart.svg'
 import { ReactComponent as Bag } from 'incart-fe-common/src/icons/Bag.svg'
-import { useCallback, useEffect, useMemo, useRef } from 'react'
+import emptyHandImage from 'incart-fe-common/src/images/empty-hand.png'
+import { Button, Callout, Text1 } from 'incart-fe-common'
+import { useCallback, useEffect, useRef } from 'react'
 import autoAnimate from '@formkit/auto-animate'
-import { Button, Text1 } from 'incart-fe-common'
-import { Vexile } from '@haechi/flexile'
 import { useAtom, useAtomValue } from 'jotai'
+import { Vexile } from '@haechi/flexile'
 import immer from 'immer'
 
-import { CartItem } from '@/components'
 import { cartAtom, wholePriceAtom } from '@/jotai'
+import { CartItem, Plink } from '@/components'
 import Styles from './styles'
 
 export default () => {
@@ -47,7 +48,10 @@ export default () => {
     }
 
     return (
-        <Vexile filly>
+        <>
+            <Callout icon={(style) => <Cart style={style} />}>
+                장바구니에 다른 상품을 추가할 수 있습니다
+            </Callout>
             <Styles.CartListWrapper ref={parent}>
                 {cart.map((item, index) => (
                     <CartItem
@@ -58,10 +62,14 @@ export default () => {
                     />
                 ))}
             </Styles.CartListWrapper>
-            <Button icon={(style) => <Bag style={style} />}>
-                <span style={{ fontWeight: 'initial' }}>{wholePrice}원</span>{' '}
-                구매하기
-            </Button>
-        </Vexile>
+            <Plink to="/orderer-info" block>
+                <Button icon={(style) => <Bag style={style} />}>
+                    <span style={{ fontWeight: 'initial' }}>
+                        {wholePrice.toLocaleString()}원
+                    </span>{' '}
+                    구매하기
+                </Button>
+            </Plink>
+        </>
     )
 }

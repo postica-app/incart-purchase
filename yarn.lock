@@ -2863,7 +2863,7 @@ __metadata:
 
 "incart-fe-common@https://github.com/ryconics/incart-fe-common":
   version: 0.0.0
-  resolution: "incart-fe-common@https://github.com/ryconics/incart-fe-common.git#commit=34a52f1fe58885a6d1c839220c0ac6748ab63a84"
+  resolution: "incart-fe-common@https://github.com/ryconics/incart-fe-common.git#commit=9d8e99a712ddc07112ea1cc41e489c756892e29d"
   dependencies:
     "@haechi/flexile": "npm:^1.4.7"
     "@stitches/react": "npm:^1.2.8"
@@ -2877,7 +2877,7 @@ __metadata:
     formik: ^2.2.9
     react: ^18.0.0
     react-dom: ^18.0.0
-  checksum: 377ba65cef4af1b9a49469a95238fbd231efff6619336338d9449d580604a367d0217b16046f05850b54ae580e4d8434e77d1bd066daae6d7602c79e7a6ce2cc
+  checksum: 1f358e93453a486e31bc93601b1f689cedcd1d02104cd13fe864d0eb4d5f93b25c1f964d4e2d3be2166994610151be9a7b0aa01551c10bb2c6f2b0a4ae6ae78d
   languageName: node
   linkType: hard
 
