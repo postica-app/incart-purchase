@@ -1,7 +1,7 @@
 import { atom } from 'jotai'
 import { atomWithStorage } from 'jotai/utils'
 import { getCartItemPrice } from './functions'
-import { CartItemType } from './type'
+import { CartItemType, OrdererInfo } from './type'
 
 export const cartAtom = atomWithStorage<CartItemType[]>(
     'CART',
@@ -35,6 +35,11 @@ export const cartAtom = atomWithStorage<CartItemType[]>(
               },
           ]
         : []
+)
+
+export const ordererInfoAtom = atomWithStorage<OrdererInfo | null>(
+    'ORDERER_INFO',
+    null
 )
 
 export const wholePriceAtom = atom((get) => {

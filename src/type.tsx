@@ -6,3 +6,8 @@ export interface CartItemType {
     amount: number
     selectedOptions: string[]
 }
+export interface OrdererInfo {
+    name: string
+    phoneNumber: string
+    email: string
+}

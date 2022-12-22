@@ -20,3 +20,11 @@ export const Plink = styled(Link, {
         },
     },
 })
+
+export const Pform = styled('form', {
+    variants: {
+        filly: {
+            true: { flex: 1 },
+        },
+    },
+})
