@@ -29,7 +29,7 @@ export default () => {
 
     return (
         <styles.Wrapper>
-            <Vexile gap={6} filly>
+            <Vexile gap={6} filly css={{ flex: 1 }}>
                 <Outlet />
             </Vexile>
             <Hexile x="center" y="center">
@@ -48,7 +48,7 @@ const styles = {
         padding: '6rem',
 
         boxSizing: 'border-box',
-        height: '100%',
+        minHeight: '100vh',
 
         flexDirection: 'column',
         display: 'flex',

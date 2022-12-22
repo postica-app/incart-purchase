@@ -17,10 +17,13 @@ export default {
     },
     async fetchProduct() {
         const productInfo = this.getProductInfoFromURL()
+        console.log(import.meta.env)
 
         const result = await (
             await fetch(
-                'https://get-product.incart.me/' + productInfo.productId
+                import.meta.env.VITE_API_ENDPOINT +
+                    'product/' +
+                    productInfo.productId
             )
         ).json()
 

@@ -1,7 +1,7 @@
 import { atom } from 'jotai'
 import { atomWithStorage } from 'jotai/utils'
 import { getCartItemPrice } from './functions'
-import { CartItemType, OrdererInfo } from './type'
+import { CartItemType, OrdererInfo, ReceiverInfo } from './type'
 
 export const cartAtom = atomWithStorage<CartItemType[]>(
     'CART',
@@ -11,6 +11,7 @@ export const cartAtom = atomWithStorage<CartItemType[]>(
                   product: {
                       id: 'b928a2e1-bde1-4563-9c5e-9feb653317fd',
                       name: '봉이워터 그레이트!',
+                      store_id: 'ABABABB',
                       price: 1000,
                       options: [
                           {
@@ -41,6 +42,8 @@ export const ordererInfoAtom = atomWithStorage<OrdererInfo | null>(
     'ORDERER_INFO',
     null
 )
+
+export const receiverInfoAtom = atom<ReceiverInfo | null>(null)
 
 export const wholePriceAtom = atom((get) => {
     const cart = get(cartAtom)
