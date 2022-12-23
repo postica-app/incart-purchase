@@ -24,7 +24,12 @@ export const Plink = styled(Link, {
 export const Pform = styled('form', {
     variants: {
         filly: {
-            true: { flex: 1 },
+            true: {
+                flex: 1,
+                // display: 'flex',
+                // flexDirection: 'column',
+                // height: '100%',
+            },
         },
     },
 })

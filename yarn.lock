@@ -5,6 +5,13 @@ __metadata:
   version: 7
   cacheKey: 9
 
+"@actbase/react-daum-postcode@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "@actbase/react-daum-postcode@npm:1.0.4"
+  checksum: d7bdf110d699bb87492496cf01ffea30cd951e288399fc6f573350e4547091f26ec9c11824600561ece6d75ff4ab20eeae48c51b71063df979e82cc9849e3c44
+  languageName: node
+  linkType: hard
+
 "@ampproject/remapping@npm:^2.1.0":
   version: 2.2.0
   resolution: "@ampproject/remapping@npm:2.2.0"
@@ -3179,7 +3186,7 @@ __metadata:
 
 "incart-fe-common@https://github.com/ryconics/incart-fe-common":
   version: 0.0.0
-  resolution: "incart-fe-common@https://github.com/ryconics/incart-fe-common.git#commit=9cd1ab0fe3b0e3c4f515c2f3ee309b0944d12f0c"
+  resolution: "incart-fe-common@https://github.com/ryconics/incart-fe-common.git#commit=e224cae155de32aed0b347fddad71eb95b4cb5aa"
   dependencies:
     "@haechi/flexile": "npm:^1.4.7"
     "@stitches/react": "npm:^1.2.8"
@@ -3193,7 +3200,7 @@ __metadata:
     formik: ^2.2.9
     react: ^18.0.0
     react-dom: ^18.0.0
-  checksum: 364ebee7da7b949a27e2c0c8d29479055082778a0f431b4ebb26a7c3e3bc64a33ef18be94cf368a4a30f862ef82afd8d3cd1dce4ade46550c01aa1b5c6ed1db4
+  checksum: 9884fc871935561ee54f074e0cd08dccf7db86ebbf9d73d52be7e2f4c1877075e9e0e55c761cde23c1f303db28fdf66d62fed3d7716ce83c8754bd8865c010f6
   languageName: node
   linkType: hard
 
@@ -3201,6 +3208,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "incart-purchase@workspace:."
   dependencies:
+    "@actbase/react-daum-postcode": "npm:^1.0.4"
     "@formkit/auto-animate": "npm:1.0.0-beta.5"
     "@haechi/flexile": "npm:^1.5.1"
     "@stitches/react": "npm:^1.2.8"
@@ -3217,6 +3225,7 @@ __metadata:
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     react-router-dom: "npm:^6.4.5"
+    tslib: "npm:^2.4.1"
     typescript: "npm:^4.9.3"
     vite: "npm:^4.0.0"
     yup: "npm:^0.32.11"
@@ -4505,6 +4514,13 @@ __metadata:
   version: 1.14.1
   resolution: "tslib@npm:1.14.1"
   checksum: 441af59dc42ad4ae57140e62cb362369620c6076845c2c2b0ecc863c1d719ce24fdbc301e9053433fef43075e061bf84b702318ff1204b496a5bba10baf9eb9f
+  languageName: node
+  linkType: hard
+
+"tslib@npm:^2.4.1":
+  version: 2.4.1
+  resolution: "tslib@npm:2.4.1"
+  checksum: a739a21e3ff059e62c7c3c0845333fbc9c081bcc91e015f2d246a31eeaf1fb0e29b10c0913c7d22f692b3203bb469fd60ca5288aa4f27d351a969df2d0714899
   languageName: node
   linkType: hard
 

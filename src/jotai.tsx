@@ -1,7 +1,13 @@
-import { atom } from 'jotai'
+import {
+    CartItemType,
+    OrdererInfoType,
+    ReceiverInfoType,
+    ShippingInfoType,
+} from 'incart-fe-common'
 import { atomWithStorage } from 'jotai/utils'
+import { atom } from 'jotai'
+
 import { getCartItemPrice } from './functions'
-import { CartItemType, OrdererInfo, ReceiverInfo } from './type'
 
 export const cartAtom = atomWithStorage<CartItemType[]>(
     'CART',
@@ -38,12 +44,17 @@ export const cartAtom = atomWithStorage<CartItemType[]>(
         : []
 )
 
-export const ordererInfoAtom = atomWithStorage<OrdererInfo | null>(
+export const ordererInfoAtom = atomWithStorage<OrdererInfoType | null>(
     'ORDERER_INFO',
     null
 )
 
-export const receiverInfoAtom = atom<ReceiverInfo | null>(null)
+export const shippingInfoAtom = atomWithStorage<ShippingInfoType | null>(
+    'SHIPPING_INFO',
+    null
+)
+
+export const receiverInfoAtom = atom<ReceiverInfoType | null>(null)
 
 export const wholePriceAtom = atom((get) => {
     const cart = get(cartAtom)

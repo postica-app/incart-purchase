@@ -2,6 +2,8 @@ import { StoreType } from 'incart-fe-common'
 
 const storeMap = new Map<string, StoreType>()
 
+export const getCachedStoreInfo = (storeUUID: string) => storeMap.get(storeUUID)
+
 export async function fetchStoreInfo(storeUUID: string) {
     if (storeMap.has(storeUUID)) {
         return storeMap.get(storeUUID)!

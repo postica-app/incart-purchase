@@ -12,6 +12,7 @@ html {
 }
 
 input,
+textarea,
 button {
     font-family: SUIT;
 }

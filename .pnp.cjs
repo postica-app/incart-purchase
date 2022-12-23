@@ -26,6 +26,7 @@ const RAW_RUNTIME_STATE =
       [null, {\
         "packageLocation": "./",\
         "packageDependencies": [\
+          ["@actbase/react-daum-postcode", "npm:1.0.4"],\
           ["@formkit/auto-animate", "npm:1.0.0-beta.5"],\
           ["@haechi/flexile", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#npm:1.5.1"],\
           ["@stitches/react", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#npm:1.2.8"],\
@@ -37,11 +38,12 @@ const RAW_RUNTIME_STATE =
           ["@vitejs/plugin-react", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#npm:3.0.0"],\
           ["formik", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#npm:2.2.9"],\
           ["immer", "npm:9.0.16"],\
-          ["incart-fe-common", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#https://github.com/ryconics/incart-fe-common.git#commit=9cd1ab0fe3b0e3c4f515c2f3ee309b0944d12f0c"],\
+          ["incart-fe-common", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#https://github.com/ryconics/incart-fe-common.git#commit=e224cae155de32aed0b347fddad71eb95b4cb5aa"],\
           ["jotai", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#npm:1.11.2"],\
           ["react", "npm:18.2.0"],\
           ["react-dom", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#npm:18.2.0"],\
           ["react-router-dom", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#npm:6.4.5"],\
+          ["tslib", "npm:2.4.1"],\
           ["typescript", "patch:typescript@npm%3A4.9.4#optional!builtin<compat/typescript>::version=4.9.4&hash=ad5954"],\
           ["vite", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#npm:4.0.1"],\
           ["yup", "npm:0.32.11"],\
@@ -49,6 +51,15 @@ const RAW_RUNTIME_STATE =
           ["zod-formik-adapter", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#npm:1.1.1"]\
         ],\
         "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["@actbase/react-daum-postcode", [\
+      ["npm:1.0.4", {\
+        "packageLocation": "../../Users/rycon/AppData/Local/Yarn/Berry/cache/@actbase-react-daum-postcode-npm-1.0.4-3fc2a2fd5b-9.zip/node_modules/@actbase/react-daum-postcode/",\
+        "packageDependencies": [\
+          ["@actbase/react-daum-postcode", "npm:1.0.4"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["@ampproject/remapping", [\
@@ -4697,17 +4708,17 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["incart-fe-common", [\
-      ["https://github.com/ryconics/incart-fe-common.git#commit=9cd1ab0fe3b0e3c4f515c2f3ee309b0944d12f0c", {\
-        "packageLocation": "../../Users/rycon/AppData/Local/Yarn/Berry/cache/incart-fe-common-https-3a0f4fb367-9.zip/node_modules/incart-fe-common/",\
+      ["https://github.com/ryconics/incart-fe-common.git#commit=e224cae155de32aed0b347fddad71eb95b4cb5aa", {\
+        "packageLocation": "../../Users/rycon/AppData/Local/Yarn/Berry/cache/incart-fe-common-https-7df45c24ad-9.zip/node_modules/incart-fe-common/",\
         "packageDependencies": [\
-          ["incart-fe-common", "https://github.com/ryconics/incart-fe-common.git#commit=9cd1ab0fe3b0e3c4f515c2f3ee309b0944d12f0c"]\
+          ["incart-fe-common", "https://github.com/ryconics/incart-fe-common.git#commit=e224cae155de32aed0b347fddad71eb95b4cb5aa"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#https://github.com/ryconics/incart-fe-common.git#commit=9cd1ab0fe3b0e3c4f515c2f3ee309b0944d12f0c", {\
-        "packageLocation": "./.yarn/__virtual__/incart-fe-common-virtual-586e10f33d/3/Users/rycon/AppData/Local/Yarn/Berry/cache/incart-fe-common-https-3a0f4fb367-9.zip/node_modules/incart-fe-common/",\
+      ["virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#https://github.com/ryconics/incart-fe-common.git#commit=e224cae155de32aed0b347fddad71eb95b4cb5aa", {\
+        "packageLocation": "./.yarn/__virtual__/incart-fe-common-virtual-1985503ca1/3/Users/rycon/AppData/Local/Yarn/Berry/cache/incart-fe-common-https-7df45c24ad-9.zip/node_modules/incart-fe-common/",\
         "packageDependencies": [\
-          ["incart-fe-common", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#https://github.com/ryconics/incart-fe-common.git#commit=9cd1ab0fe3b0e3c4f515c2f3ee309b0944d12f0c"],\
+          ["incart-fe-common", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#https://github.com/ryconics/incart-fe-common.git#commit=e224cae155de32aed0b347fddad71eb95b4cb5aa"],\
           ["@haechi/flexile", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#npm:1.5.1"],\
           ["@stitches/react", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#npm:1.2.8"],\
           ["@types/formik", null],\
@@ -4716,7 +4727,7 @@ const RAW_RUNTIME_STATE =
           ["@types/react-dom", "npm:18.0.9"],\
           ["@types/stitches__react", null],\
           ["formik", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#npm:2.2.9"],\
-          ["namisa", "virtual:586e10f33df6ebde9b2a4ec3a5f062746b8e70d0ec23f0395ffc536e439eb8d1df9f7d7e8361486634034ec0d4ebfa95d6218ba39c8fd520a152582bd04a9c31#https://github.com/rycont/namisa.git#commit=316fc63339ec6052f1e488fca65816ac288a37cd"],\
+          ["namisa", "virtual:1985503ca1bae3aa80c49cb5a0b2138fe61f95c1bde26e0989fc02ec7f7ac43b5bb6843ff75d0e6baa95aeff107062588290ec50c411f8bac382abb304abd4ca#https://github.com/rycont/namisa.git#commit=316fc63339ec6052f1e488fca65816ac288a37cd"],\
           ["react", "npm:18.2.0"],\
           ["react-dom", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#npm:18.2.0"]\
         ],\
@@ -4740,6 +4751,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["incart-purchase", "workspace:."],\
+          ["@actbase/react-daum-postcode", "npm:1.0.4"],\
           ["@formkit/auto-animate", "npm:1.0.0-beta.5"],\
           ["@haechi/flexile", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#npm:1.5.1"],\
           ["@stitches/react", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#npm:1.2.8"],\
@@ -4751,11 +4763,12 @@ const RAW_RUNTIME_STATE =
           ["@vitejs/plugin-react", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#npm:3.0.0"],\
           ["formik", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#npm:2.2.9"],\
           ["immer", "npm:9.0.16"],\
-          ["incart-fe-common", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#https://github.com/ryconics/incart-fe-common.git#commit=9cd1ab0fe3b0e3c4f515c2f3ee309b0944d12f0c"],\
+          ["incart-fe-common", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#https://github.com/ryconics/incart-fe-common.git#commit=e224cae155de32aed0b347fddad71eb95b4cb5aa"],\
           ["jotai", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#npm:1.11.2"],\
           ["react", "npm:18.2.0"],\
           ["react-dom", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#npm:18.2.0"],\
           ["react-router-dom", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#npm:6.4.5"],\
+          ["tslib", "npm:2.4.1"],\
           ["typescript", "patch:typescript@npm%3A4.9.4#optional!builtin<compat/typescript>::version=4.9.4&hash=ad5954"],\
           ["vite", "virtual:ab8a0cea16eb214af90597d543990375afd19dfb58cfed2f51a7b04df234c5211bf1cd9651cf69afdfa06830df365b026fc8b2e7a156ba65498ece1ff6df5961#npm:4.0.1"],\
           ["yup", "npm:0.32.11"],\
@@ -5339,10 +5352,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:586e10f33df6ebde9b2a4ec3a5f062746b8e70d0ec23f0395ffc536e439eb8d1df9f7d7e8361486634034ec0d4ebfa95d6218ba39c8fd520a152582bd04a9c31#https://github.com/rycont/namisa.git#commit=316fc63339ec6052f1e488fca65816ac288a37cd", {\
-        "packageLocation": "./.yarn/__virtual__/namisa-virtual-af16be023a/3/Users/rycon/AppData/Local/Yarn/Berry/cache/namisa-https-962231ddab-9.zip/node_modules/namisa/",\
+      ["virtual:1985503ca1bae3aa80c49cb5a0b2138fe61f95c1bde26e0989fc02ec7f7ac43b5bb6843ff75d0e6baa95aeff107062588290ec50c411f8bac382abb304abd4ca#https://github.com/rycont/namisa.git#commit=316fc63339ec6052f1e488fca65816ac288a37cd", {\
+        "packageLocation": "./.yarn/__virtual__/namisa-virtual-014d4b8b9c/3/Users/rycon/AppData/Local/Yarn/Berry/cache/namisa-https-962231ddab-9.zip/node_modules/namisa/",\
         "packageDependencies": [\
-          ["namisa", "virtual:586e10f33df6ebde9b2a4ec3a5f062746b8e70d0ec23f0395ffc536e439eb8d1df9f7d7e8361486634034ec0d4ebfa95d6218ba39c8fd520a152582bd04a9c31#https://github.com/rycont/namisa.git#commit=316fc63339ec6052f1e488fca65816ac288a37cd"],\
+          ["namisa", "virtual:1985503ca1bae3aa80c49cb5a0b2138fe61f95c1bde26e0989fc02ec7f7ac43b5bb6843ff75d0e6baa95aeff107062588290ec50c411f8bac382abb304abd4ca#https://github.com/rycont/namisa.git#commit=316fc63339ec6052f1e488fca65816ac288a37cd"],\
           ["@mdx-js/rollup", null],\
           ["@types/mdx-js__rollup", null],\
           ["@types/react", "npm:18.0.26"],\
@@ -6257,6 +6270,13 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../Users/rycon/AppData/Local/Yarn/Berry/cache/tslib-npm-1.14.1-102499115e-9.zip/node_modules/tslib/",\
         "packageDependencies": [\
           ["tslib", "npm:1.14.1"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:2.4.1", {\
+        "packageLocation": "../../Users/rycon/AppData/Local/Yarn/Berry/cache/tslib-npm-2.4.1-36f0ed04db-9.zip/node_modules/tslib/",\
+        "packageDependencies": [\
+          ["tslib", "npm:2.4.1"]\
         ],\
         "linkType": "HARD"\
       }]\

@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import { Header2, ShippingMethodType } from 'incart-fe-common'
 import { Vexile } from '@haechi/flexile'
 import { useAtomValue } from 'jotai'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 import { cartAtom } from '@/jotai'
 import action from './action'
@@ -25,18 +25,25 @@ export default () => {
         })()
     }, [cart])
 
+    const onClick = useCallback((methodName: string) => {
+        goto('/shipping/' + methodName)
+    }, [])
+
     return (
-        <Vexile gap={6} filly>
+        // <Vexile gap={6} filly>
+        <>
             <Header2>상품을 받을 방법을 골라주세요</Header2>
             <Vexile gap={3}>
                 {shippingMethods &&
                     shippingMethods.map((method) => (
                         <Parts.ShippingMethod
+                            onClick={() => onClick(method.name)}
                             shippingMethod={method}
                             key={method.name}
                         />
                     ))}
             </Vexile>
-        </Vexile>
+        </>
+        // </Vexile>
     )
 }

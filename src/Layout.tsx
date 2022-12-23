@@ -29,9 +29,9 @@ export default () => {
 
     return (
         <styles.Wrapper>
-            <Vexile gap={6} filly css={{ flex: 1 }}>
+            <styles.ContentWrapper gap={6} filly>
                 <Outlet />
-            </Vexile>
+            </styles.ContentWrapper>
             <Hexile x="center" y="center">
                 <styles.TextLogo />
                 <styles.BrandInfoText>
@@ -53,6 +53,9 @@ const styles = {
         flexDirection: 'column',
         display: 'flex',
         gap: '3rem',
+    }),
+    ContentWrapper: styled(Vexile, {
+        flex: 1,
     }),
     TextLogo: styled(_TextLogo, {
         width: '15rem',

@@ -10,7 +10,7 @@ const pages = Object.entries(import.meta.glob('/src/pages/**/page.tsx')).map(
             () => importPage() as Promise<{ default: ComponentType }>
         )
         return {
-            path: pagePath.split('/').slice(3, -1).join('/'),
+            path: pagePath.split('/').slice(3, -1).join('/').replace('$', ':'),
             element: (
                 <Suspense>
                     <Page />
