@@ -86,7 +86,6 @@ export default () => {
             <FormikContext.Provider value={formik}>
                 <Vexile gap={6} filly>
                     <Vexile gap={6} filly>
-                        {/* {postcodeModal} */}
                         <Header2>상품을 어디로 받을지 알려주세요</Header2>
                         {shippingMethod?.form.address !== 'no' && (
                             <>

@@ -11,29 +11,34 @@ import { useFormik } from 'formik'
 import * as yup from 'yup'
 
 import { Pform } from '@/components'
-import { useAtomValue } from 'jotai'
-import { ordererInfoAtom } from '@/jotai'
+import { useAtom, useAtomValue } from 'jotai'
+import { ordererInfoAtom, receiverInfoAtom } from '@/jotai'
 import { useNavigate } from 'react-router-dom'
 
 export default () => {
+    const [receiverinfo, setReceiverInfo] = useAtom(receiverInfoAtom)
     const ordererInfo = useAtomValue(ordererInfoAtom)
+
     const goto = useNavigate()
 
     const formik = useFormik({
-        initialValues: ordererInfo
-            ? {
-                  name: ordererInfo.name,
-                  phoneNumber: ordererInfo.phoneNumber,
-              }
-            : {
-                  name: '',
-                  phoneNumber: '',
-              },
+        initialValues:
+            receiverinfo ||
+            (ordererInfo
+                ? {
+                      name: ordererInfo.name,
+                      phoneNumber: ordererInfo.phoneNumber,
+                  }
+                : {
+                      name: '',
+                      phoneNumber: '',
+                  }),
         validationSchema: yup.object().shape({
             name: yup.string().required('이름을 입력해주세요'),
             phoneNumber: yup.string().required('전화번호를 입력해주세요'),
         }),
         onSubmit(values) {
+            setReceiverInfo(values)
             goto('/shipping')
         },
         validateOnChange: false,

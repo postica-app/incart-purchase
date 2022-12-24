@@ -7,6 +7,26 @@
         <title>인카트 구매</title>
     </head>
     <body>
+        <div
+            class="cf-turnstile"
+            data-sitekey="0x4AAAAAAABt8LtXbrSyKkcD"
+            data-callback="console.log"
+        ></div>
+        <script
+            src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+            async
+            defer
+        ></script>
+        <script>
+            window.onloadTurnstileCallback = function () {
+                // console.log('네?')
+                console.log(turnstile.getResponse())
+            }
+
+            // window.onloadTurnstileCallback = function () {
+            //     console.log('네?')
+            // }
+        </script>
         <div id="root"></div>
         <script type="module" src="/src/main.tsx"></script>
     </body>

@@ -3,11 +3,10 @@ import {
     OrdererInfoType,
     ReceiverInfoType,
     ShippingInfoType,
+    getCartItemPrice,
 } from 'incart-fe-common'
 import { atomWithStorage } from 'jotai/utils'
 import { atom } from 'jotai'
-
-import { getCartItemPrice } from './functions'
 
 export const cartAtom = atomWithStorage<CartItemType[]>(
     'CART',
@@ -17,7 +16,7 @@ export const cartAtom = atomWithStorage<CartItemType[]>(
                   product: {
                       id: 'b928a2e1-bde1-4563-9c5e-9feb653317fd',
                       name: '봉이워터 그레이트!',
-                      store_id: 'ABABABB',
+                      store_id: 'd14c2568-cca5-4d0b-91e7-89af116fec6e',
                       price: 1000,
                       options: [
                           {
@@ -54,7 +53,10 @@ export const shippingInfoAtom = atomWithStorage<ShippingInfoType | null>(
     null
 )
 
-export const receiverInfoAtom = atom<ReceiverInfoType | null>(null)
+export const receiverInfoAtom = atomWithStorage<ReceiverInfoType | null>(
+    'RECEIVER_INFO',
+    null
+)
 
 export const wholePriceAtom = atom((get) => {
     const cart = get(cartAtom)

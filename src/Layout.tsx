@@ -1,16 +1,12 @@
-import { Hexile, Vexile } from '@haechi/flexile'
-import { styled, colors } from 'incart-fe-common'
 import { ReactComponent as _TextLogo } from 'incart-fe-common/src/brand/TextLogo.svg'
-import { useAtom } from 'jotai'
-import { useEffect } from 'react'
+import { Hexile, Vexile } from '@haechi/flexile'
+import { styled } from 'incart-fe-common'
 import { Outlet } from 'react-router-dom'
+import { useEffect } from 'react'
+
 import { channel, EVENTS } from './channel'
-import { cartAtom } from './jotai'
-import { CartItemType } from './type'
 
 export default () => {
-    // const [cart, setCart] = useAtom(cartAtom)
-
     useEffect(() => {
         const handler = (message: MessageEvent<string>) => {
             const payload = JSON.parse(message.data) as {
@@ -28,7 +24,7 @@ export default () => {
     }, [])
 
     return (
-        <styles.Wrapper>
+        <styles.Wrapper padding={6} gap={3}>
             <styles.ContentWrapper gap={6} filly>
                 <Outlet />
             </styles.ContentWrapper>
@@ -43,16 +39,8 @@ export default () => {
 }
 
 const styles = {
-    Wrapper: styled('div', {
-        paddingBottom: '3rem',
-        padding: '6rem',
-
-        boxSizing: 'border-box',
-        minHeight: '100vh',
-
-        flexDirection: 'column',
-        display: 'flex',
-        gap: '3rem',
+    Wrapper: styled(Vexile, {
+        height: '100vh',
     }),
     ContentWrapper: styled(Vexile, {
         flex: 1,

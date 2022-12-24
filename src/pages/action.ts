@@ -1,5 +1,5 @@
-import { ProductType } from 'incart-fe-common'
-import { Doc } from '../type'
+import { cfetch } from '@/functions'
+import { Doc, ProductType } from 'incart-fe-common'
 
 export default {
     getProductInfoFromURL() {
@@ -20,11 +20,7 @@ export default {
         console.log(import.meta.env)
 
         const result = await (
-            await fetch(
-                import.meta.env.VITE_API_ENDPOINT +
-                    'product/' +
-                    productInfo.productId
-            )
+            await cfetch('product/' + productInfo.productId)
         ).json()
 
         return {

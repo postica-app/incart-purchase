@@ -1,9 +1,12 @@
-import { getCartItemPrice } from '@/functions'
+import {
+    CartItemType,
+    getCartItemPrice,
+    Header2,
+    Text2,
+} from 'incart-fe-common'
 import { Hexile, Vexile } from '@haechi/flexile'
-import { Header2, Text2 } from 'incart-fe-common'
-
 import { useEffect, useMemo } from 'react'
-import { CartItemType } from '../../type'
+
 import { useInlineInput } from '../InlineInput'
 import Styles from './styles'
 
