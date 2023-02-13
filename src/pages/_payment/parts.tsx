@@ -4,8 +4,8 @@ import { Vexile } from '@haechi/flexile'
 import { useMemo } from 'react'
 import QR from 'react-qr-code'
 
-import Styles from './styles'
 import providers from './providers'
+import Styles from './styles'
 
 export default {
     QRPayment(props: {
@@ -14,7 +14,7 @@ export default {
     }) {
         const goto = useNavigate()
 
-        const [value, setValue, setErrorMessage, Switch] = useSwitch({
+        const [value, _setValue, __setErrorMessage, Switch] = useSwitch({
             items: props.paymentReceiveAccount.other.map((provider) => ({
                 name: providers[provider.type].name,
                 key: provider.type,

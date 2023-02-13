@@ -1,6 +1,9 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { ComponentType, lazy, Suspense } from 'react'
+import 'react-spring-bottom-sheet/dist/style.css'
 import ReactDOM from 'react-dom/client'
+import 'josa-complete'
+
 import './index.css'
 import Layout from './Layout'
 
@@ -25,7 +28,5 @@ const router = createBrowserRouter([
 ])
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-    // <React.StrictMode>
     <RouterProvider router={router} />
-    // </React.StrictMode>
 )

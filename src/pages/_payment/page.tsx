@@ -1,20 +1,20 @@
 import { ReactComponent as Arrow } from 'incart-fe-common/src/icons/Right Arrow.svg'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { Button, Header1, Header2 } from 'incart-fe-common'
-import { Vexile } from '@haechi/flexile'
-import { useAtomValue } from 'jotai'
 import { useCallback, useMemo } from 'react'
+import { useAtomValue } from 'jotai'
+import { Vexile } from '@haechi/flexile'
 
 import {
-    cartAtom,
-    ordererInfoAtom,
     receiverInfoAtom,
     shippingInfoAtom,
+    ordererInfoAtom,
     wholePriceAtom,
+    cartAtom,
 } from '@/jotai'
 import { getCachedStoreInfo } from '@/functions'
-import Parts from './parts'
 import actions from './actions'
+import Parts from './parts'
 
 export default () => {
     const shippingMethodName = useSearchParams()[0].get('shippingMethod')
@@ -53,26 +53,19 @@ export default () => {
 
     const onClick = useCallback(async () => {
         if (!orderer || !shipping || !receiver) {
-            console.log({
-                orderer,
-                shipping,
-                receiver,
-            })
             alert('정보를 모두 입력해주세요')
             return
         }
 
-        console.log(
-            await actions.createOrder({
-                cart: cart.map((item) => ({
-                    ...item,
-                    product_id: item.product.id,
-                })),
-                orderer,
-                shipping,
-                receiver,
-            })
-        )
+        await actions.createOrder({
+            cart: cart.map((item) => ({
+                ...item,
+                product_id: item.product.id,
+            })),
+            orderer,
+            shipping,
+            receiver,
+        })
     }, [cart, orderer, shipping, receiver])
 
     return (

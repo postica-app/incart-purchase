@@ -5,6 +5,7 @@ body {
 html {
     font-size: 3.6px;
     font-family: SUIT;
+      --rsbs-backdrop-bg: rgba(0, 0, 0, 0.1);
 }
 
 input,

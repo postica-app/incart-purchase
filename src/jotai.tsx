@@ -58,9 +58,12 @@ export const receiverInfoAtom = atomWithStorage<ReceiverInfoType | null>(
     null
 )
 
+export const bottomSheetAtom = atom<React.ReactNode | null>(null)
+
 export const wholePriceAtom = atom((get) => {
     const cart = get(cartAtom)
-    const prices = cart.map((item) => getCartItemPrice(item))
+    if (cart.length === 0) return 0
 
+    const prices = cart.map((item) => getCartItemPrice(item))
     return prices.reduce((a, b) => a + b)
 })

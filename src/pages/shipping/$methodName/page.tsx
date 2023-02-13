@@ -1,14 +1,14 @@
 import { ReactComponent as Arrow } from 'incart-fe-common/src/icons/Right Arrow.svg'
 import { ReactComponent as Home } from 'incart-fe-common/src/icons/Home.svg'
 import {
-    Button,
-    Callout,
-    FInput,
-    FormField,
-    Header2,
-    Text1,
-    FormikContext,
     ShippingInfoType,
+    FormikContext,
+    FormField,
+    Callout,
+    Header2,
+    Button,
+    FInput,
+    Text1,
 } from 'incart-fe-common'
 import { useNavigate, useParams } from 'react-router-dom'
 import { Hexile, Vexile } from '@haechi/flexile'
@@ -19,12 +19,11 @@ import { useFormik } from 'formik'
 import { cartAtom, shippingInfoAtom } from '@/jotai'
 import { getCachedStoreInfo } from '@/functions'
 import { Pform } from '@/components'
-import action from './action'
 import Parts from './parts'
 
 export default () => {
     const [shippingInfo, setShippingInfo] = useAtom(shippingInfoAtom)
-    const shippingMethodName = useParams().methodName
+    const shippingMethodName = useParams().methodName!
     const cart = useAtomValue(cartAtom)
     const goto = useNavigate()
 
@@ -50,6 +49,7 @@ export default () => {
                 detail: '',
             },
             message: '',
+            method: shippingMethodName,
         },
         validate(values) {
             const errors: Record<string, string> = {}
@@ -72,12 +72,13 @@ export default () => {
             if (shippingMethod?.form.address === 'no') {
                 setShippingInfo({
                     message: values.message,
+                    method: shippingMethodName,
                 })
             } else {
                 setShippingInfo(values)
             }
 
-            goto('/payment/?shippingMethod=' + shippingMethodName)
+            goto('/check-order')
         },
     })
 
@@ -145,6 +146,7 @@ export default () => {
                     <Button
                         type="submit"
                         icon={(style) => <Arrow style={style} />}
+                        disabled={formik.isSubmitting}
                     >
                         다음
                     </Button>

@@ -1,10 +1,12 @@
 import { ReactComponent as _TextLogo } from 'incart-fe-common/src/brand/TextLogo.svg'
 import { Hexile, Vexile } from '@haechi/flexile'
+import { Toaster } from 'react-hot-toast'
 import { styled } from 'incart-fe-common'
 import { Outlet } from 'react-router-dom'
 import { useEffect } from 'react'
 
 import { channel, EVENTS } from './channel'
+import { BottomSheet } from './components'
 
 export default () => {
     useEffect(() => {
@@ -25,6 +27,8 @@ export default () => {
 
     return (
         <styles.Wrapper padding={6} gap={3}>
+            <Toaster />
+            <BottomSheet />
             <styles.ContentWrapper gap={6} filly>
                 <Outlet />
             </styles.ContentWrapper>

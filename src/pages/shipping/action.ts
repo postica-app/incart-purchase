@@ -1,5 +1,5 @@
+import { CartItemType } from 'incart-fe-common'
 import { fetchStoreInfo } from '@/functions'
-import { CartItemType } from '@/type'
 
 export default {
     async getStoreFromCart(cartItems: CartItemType[]) {
