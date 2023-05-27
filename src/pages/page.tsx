@@ -1,7 +1,7 @@
 import { CartItemType } from 'incart-fe-common'
 import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
-import { useAtom } from 'jotai'
+import { useAtom, useSetAtom } from 'jotai'
 
 import { channel, EVENTS } from '../channel'
 import { isEqualArray } from '@/functions'
@@ -9,7 +9,7 @@ import { cartAtom } from '../jotai'
 import action from './action'
 
 export default () => {
-    const [cart, setCart] = useAtom(cartAtom)
+    const setCart = useSetAtom(cartAtom)
     const goto = useNavigate()
 
     useEffect(() => {

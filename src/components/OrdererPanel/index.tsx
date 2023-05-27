@@ -66,7 +66,7 @@ export const OrdererPanel: React.FC<OrdererPanelProps> = (props) => {
                         </FormField>
                     </Vexile>
                     <Button
-                        icon={(style) => <Arrow style={style} />}
+                        icon={(props) => <Arrow {...props} />}
                         type="submit"
                     >
                         {props.button?.text || '다음'}

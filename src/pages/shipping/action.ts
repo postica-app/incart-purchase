@@ -9,7 +9,7 @@ export default {
         }
 
         const isAllSameStore = cartItems.every(
-            (item) => item.product.store_id === cartItems[0].product.store_id
+            (item) => item.product.store_rid === cartItems[0].product.store_rid
         )
 
         if (!isAllSameStore) {
@@ -19,7 +19,7 @@ export default {
             throw new Error('Different store')
         }
 
-        const storeId = cartItems[0].product.store_id
+        const storeId = cartItems[0].product.store_rid
         const store = await fetchStoreInfo(storeId)
 
         return store

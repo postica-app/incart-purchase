@@ -29,7 +29,7 @@ export default () => {
 
     const shippingMethod = useMemo(
         () =>
-            getCachedStoreInfo(cart[0].product.store_id)?.shipping_method.find(
+            getCachedStoreInfo(cart[0].product.store_rid)?.shipping_method.find(
                 (method) => method.name === shippingMethodName
             ),
         [shippingMethodName]
@@ -102,8 +102,8 @@ export default () => {
                                                 <Button
                                                     size="small"
                                                     ghost
-                                                    icon={(style) => (
-                                                        <Home style={style} />
+                                                    icon={(props) => (
+                                                        <Home {...props} />
                                                     )}
                                                     onClick={onClick}
                                                 >
@@ -145,7 +145,7 @@ export default () => {
 
                     <Button
                         type="submit"
-                        icon={(style) => <Arrow style={style} />}
+                        icon={(props) => <Arrow {...props} />}
                         disabled={formik.isSubmitting}
                     >
                         다음

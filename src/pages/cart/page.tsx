@@ -16,7 +16,7 @@ export default () => {
             </Callout>
             <CartItemList />
             <Plink to="/orderer-info" block>
-                <Button icon={(style) => <Bag style={style} />}>
+                <Button icon={(props) => <Bag {...props} />}>
                     <span style={{ fontWeight: 'initial' }}>
                         {wholePrice.toLocaleString()}원
                     </span>{' '}

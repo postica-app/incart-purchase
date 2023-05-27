@@ -17,7 +17,6 @@ export default {
     },
     async fetchProduct() {
         const productInfo = this.getProductInfoFromURL()
-        console.log(import.meta.env)
 
         const result = await (
             await cfetch('product/' + productInfo.productId)

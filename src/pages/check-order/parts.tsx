@@ -11,7 +11,7 @@ export default {
                 <CartItemList />
                 <Button
                     onClick={props.onClose}
-                    icon={(style) => <Arrow style={style} />}
+                    icon={(props) => <Arrow {...props} />}
                 >
                     맞습니다
                 </Button>

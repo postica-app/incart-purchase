@@ -30,7 +30,7 @@ export default () => {
             <Button
                 size="small"
                 ghost
-                icon={(style) => <InfoIcon style={style} />}
+                icon={(props) => <InfoIcon {...props} />}
             >
                 이메일을 받지 못했나요?
             </Button>

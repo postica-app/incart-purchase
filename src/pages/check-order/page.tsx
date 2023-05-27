@@ -116,7 +116,7 @@ export default () => {
             </Text2>
             <Button
                 active={hasChecked.every(Boolean)}
-                icon={(style) => <Arrow style={style} />}
+                icon={(props) => <Arrow {...props} />}
                 onDisabledClick={() =>
                     toast('모든 정보를 눌러서 확인해주세요', '⚠️')
                 }

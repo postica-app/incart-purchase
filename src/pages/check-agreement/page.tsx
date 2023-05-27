@@ -81,7 +81,7 @@ export default () => {
             </Vexile>
             <Vexile>
                 <RecheckButton
-                    icon={(style) => <Arrow style={style} />}
+                    icon={(props) => <Arrow {...props} />}
                     active={hasChecked.every(Boolean)}
                     onClick={createOrder}
                     onDisabledClick={() => {
