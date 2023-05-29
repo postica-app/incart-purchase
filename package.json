@@ -6,7 +6,8 @@
     "scripts": {
         "dev": "vite",
         "build": "tsc && vite build",
-        "preview": "vite preview"
+        "preview": "vite preview",
+        "tunnel": "cloudflared tunnel --config ./tunnel.yml run"
     },
     "dependencies": {
         "@actbase/react-daum-postcode": "^1.0.4",
