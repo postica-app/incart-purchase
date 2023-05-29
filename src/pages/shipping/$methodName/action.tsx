@@ -1,4 +1,3 @@
-import { useLStore } from '@/functions'
 import Postcode from '@actbase/react-daum-postcode'
 import { css } from '@stitches/react'
 import { useMemo, useState } from 'react'

@@ -1,6 +1,5 @@
-export * from './isEqualArray'
 export * from './fetchStoreInfo'
-export * from './useLStore'
+export * from './isEqualArray'
 export * from './getCaptcha'
 export * from './cfetch'
 export * from './toast'
