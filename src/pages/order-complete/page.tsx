@@ -4,10 +4,11 @@ import Rive from '@rive-app/react-canvas'
 import { Vexile } from '@haechi/flexile'
 import { useAtomValue } from 'jotai'
 
-import { ordererInfoAtom } from '@/jotai'
+import { ordererInfoAtom, storeAtom } from '@/jotai'
 
 export default () => {
     const ordererInfo = useAtomValue(ordererInfoAtom)
+    const store = useAtomValue(storeAtom)
     return (
         <Vexile gap={6} filly x="center" y="center">
             <Rive
@@ -20,7 +21,7 @@ export default () => {
             <Vexile gap={3} x="center" y="center">
                 <Header1>주문서가 전달되었습니다</Header1>
                 <Text1 purple center>
-                    리코닉스에서 상품을 주문해주셔서 <br /> 고맙습니다
+                    {store?.name}에서 상품을 주문해주셔서 <br /> 고맙습니다
                 </Text1>
             </Vexile>
             <Text1 grey5 center>

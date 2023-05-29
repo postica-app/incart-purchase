@@ -2,7 +2,7 @@ import { cfetch } from '@/functions'
 import { Doc, ProductType } from 'incart-fe-common'
 
 export default {
-    getProductInfoFromURL() {
+    getProductInfoFromQuery() {
         const params = new URLSearchParams(location.search)
 
         const productId = params.get('product_id')
@@ -15,8 +15,8 @@ export default {
 
         return { productId, optionName }
     },
-    async fetchProduct() {
-        const productInfo = this.getProductInfoFromURL()
+    async fetchProductFromQuery() {
+        const productInfo = this.getProductInfoFromQuery()
 
         const result = await (
             await cfetch('product/' + productInfo.productId)

@@ -14,7 +14,7 @@ export default () => {
 
     useEffect(() => {
         action
-            .fetchProduct()
+            .fetchProductFromQuery()
             .then((productInfo) => {
                 const cartItem: CartItemType = {
                     product: productInfo.product,

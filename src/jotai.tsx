@@ -7,6 +7,7 @@ import {
 } from 'incart-fe-common'
 import { atomWithStorage } from 'jotai/utils'
 import { atom } from 'jotai'
+import { fetchStoreInfo } from './functions'
 
 export const cartAtom = atomWithStorage<CartItemType[]>('CART', [])
 
@@ -33,4 +34,11 @@ export const wholePriceAtom = atom((get) => {
 
     const prices = cart.map((item) => getCartItemPrice(item))
     return prices.reduce((a, b) => a + b)
+})
+
+export const storeAtom = atom(async (get) => {
+    const cart = get(cartAtom)
+    if (cart.length === 0) return null
+
+    return await fetchStoreInfo(cart[0].product.store_rid)
 })
