@@ -1,10 +1,12 @@
-import { useNavigate } from 'react-router-dom'
 import { Header2, ShippingMethodType } from 'incart-fe-common'
+import { useCallback, useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Vexile } from '@haechi/flexile'
 import { useAtomValue } from 'jotai'
-import { useCallback, useEffect, useState } from 'react'
 
+import { toast } from '@/functions'
 import { cartAtom } from '@/jotai'
+
 import action from './action'
 import Parts from './parts'
 
@@ -20,6 +22,8 @@ export default () => {
                 const { shipping_method } = await action.getStoreFromCart(cart)
                 setShippingMethod(shipping_method)
             } catch (e) {
+                toast('🚨', '상점 정보를 불러오는데 실패했습니다')
+                console.log(e)
                 goto('/cart')
             }
         })()
