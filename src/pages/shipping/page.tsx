@@ -4,10 +4,9 @@ import { useNavigate } from 'react-router-dom'
 import { Vexile } from '@haechi/flexile'
 import { useAtomValue } from 'jotai'
 
-import { toast } from '@/functions'
+import { getStoreFromCart, toast } from '@/functions'
 import { cartAtom } from '@/jotai'
 
-import action from './action'
 import Parts from './parts'
 
 export default () => {
@@ -19,7 +18,7 @@ export default () => {
     useEffect(() => {
         ;(async () => {
             try {
-                const { shipping_method } = await action.getStoreFromCart(cart)
+                const { shipping_method } = await getStoreFromCart(cart)
                 setShippingMethod(shipping_method)
             } catch (e) {
                 toast('🚨', '상점 정보를 불러오는데 실패했습니다')

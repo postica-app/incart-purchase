@@ -1,3 +1,4 @@
+export * from './getStoreFromCart'
 export * from './fetchStoreInfo'
 export * from './isEqualArray'
 export * from './getCaptcha'
