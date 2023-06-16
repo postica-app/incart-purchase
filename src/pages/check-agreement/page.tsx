@@ -22,15 +22,15 @@ export default () => {
     const cart = useAtomValue(cartAtom)
     const goto = useNavigate()
 
-    const aggrements = useMemo(
+    const agreements = useMemo(
         () => [
-            `사장님이 주문서를 확인하시면, ${orderer?.email.으로} 결제 관련 메일을 보내드려요`,
-            `해당 메일에서 결제를 마쳐야 주문이 완료됩니다`,
+            `사장님이 주문서를 확인하시면, 이메일(${orderer?.email})이나 휴대전화(${orderer?.phoneNumber})로 결제 관련 메일을 보내드려요`,
+            `주문자님의 연락처가 올바르게 입력됐는지 다시 한번 확인해주세요`,
         ],
         [orderer]
     )
     const [hasChecked, setHasChecked] = useState(
-        [...Array(aggrements.length)].map(() => false)
+        [...Array(agreements.length)].map(() => false)
     )
 
     const createOrder = useCallback(async () => {
@@ -63,7 +63,7 @@ export default () => {
         <>
             <Header2>주문 관련 내용을 읽어주세요</Header2>
             <Vexile gap={6} filly y="bottom">
-                {aggrements.map((aggrement, i) => (
+                {agreements.map((aggrement, i) => (
                     <Hexile gap={6}>
                         <Checkbox
                             onClick={() =>
