@@ -120,7 +120,7 @@ export default () => {
                 onDisabledClick={() =>
                     toast('모든 정보를 눌러서 확인해주세요', '⚠️')
                 }
-                onClick={() => goto('/check-agreement')}
+                onClick={() => goto('/payment')}
             >
                 다음
             </Button>

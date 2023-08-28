@@ -3,15 +3,15 @@ import { cfetch } from './cfetch'
 
 const storeMap = new Map<number, StoreType>([])
 
-export const getCachedStoreInfo = (storeUUID: number) => storeMap.get(storeUUID)
+export const getCachedStoreInfo = (storeRid: number) => storeMap.get(storeRid)
 
-export async function fetchStoreInfo(storeUUID: number) {
-    if (storeMap.has(storeUUID)) {
-        return storeMap.get(storeUUID)!
+export async function fetchStoreInfo(storeRid: number) {
+    if (storeMap.has(storeRid)) {
+        return storeMap.get(storeRid)!
     }
 
-    const result: StoreType = await (await cfetch('store/' + storeUUID)).json()
+    const result: StoreType = await (await cfetch('store/' + storeRid)).json()
 
-    storeMap.set(storeUUID, result)
+    storeMap.set(storeRid, result)
     return result
 }
