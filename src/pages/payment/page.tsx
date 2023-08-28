@@ -1,23 +1,39 @@
 import { ReactComponent as Arrow } from 'incart-fe-common/src/icons/Right Arrow.svg'
+import { useNavigate } from 'react-router-dom'
 import { Vexile } from '@haechi/flexile'
 import { useAtomValue } from 'jotai'
+import { useCallback } from 'react'
+import toast from 'react-hot-toast'
 import {
     PaymentReceiveAccountType,
     PAYMENT_PROVIDER_MAP,
+    RecheckButton,
     useSwitch,
     Header1,
     Header2,
-    Button,
 } from 'incart-fe-common'
 
-import { storeAtom, wholePriceAtom } from '@/jotai'
-import { Plink } from '@/components'
+import {
+    receiverInfoAtom,
+    shippingInfoAtom,
+    ordererInfoAtom,
+    wholePriceAtom,
+    storeAtom,
+    cartAtom,
+} from '@/jotai'
 
+import action from '../check-agreement/action'
 import parts from './parts'
 
 export default () => {
     const price = useAtomValue(wholePriceAtom)
     const store = useAtomValue(storeAtom)
+    const receiver = useAtomValue(receiverInfoAtom)
+    const shipping = useAtomValue(shippingInfoAtom)
+    const orderer = useAtomValue(ordererInfoAtom)
+    const cart = useAtomValue(cartAtom)
+
+    const goto = useNavigate()
 
     const [_value, _, __, Switch] = useSwitch({
         items:
@@ -38,6 +54,32 @@ export default () => {
 
     const PaymentProvider = parts.PaymentProvider[value]
 
+    const createOrder = useCallback(async () => {
+        if (!receiver || !shipping || !orderer || !cart) {
+            toast('주문서에 필요한 정보가 부족합니다')
+            goto('/cart')
+
+            return
+        }
+
+        try {
+            await action.createOrder({
+                orderer,
+                receiver,
+                shipping,
+                cart: cart.map((item) => ({
+                    ...item,
+                    product_id: item.product.id,
+                })),
+            })
+
+            goto('/order-complete')
+        } catch (e) {
+            toast('주문서를 전달하는데 실패했습니다')
+            goto('/cart')
+        }
+    }, [receiver, shipping, orderer, cart])
+
     return (
         <>
             <Vexile gap={3}>
@@ -51,9 +93,14 @@ export default () => {
                     amount={price}
                 />
             )}
-            <Plink to="/order-complete" block>
-                <Button icon={(props) => <Arrow {...props} />}>다음</Button>
-            </Plink>
+            <Vexile>
+                <RecheckButton
+                    icon={(props) => <Arrow {...props} />}
+                    onClick={createOrder}
+                >
+                    결제 완료
+                </RecheckButton>
+            </Vexile>
         </>
     )
 }
