@@ -8,7 +8,7 @@ import { useCallback } from 'react'
 import { storeAtom } from '@/jotai'
 
 import { ErrorBoundary, Plink } from '@/components'
-import GhostRive from '@/animation/ghost.riv?url'
+import GhostRive from '@/asset/ghost.riv?url'
 
 import Parts from './parts'
 
