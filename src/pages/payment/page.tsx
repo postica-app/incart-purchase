@@ -20,15 +20,13 @@ import {
     wholePriceAtom,
     storeAtom,
     cartAtom,
-    shippingFeeAtom,
 } from '@/jotai'
 
 import action from '../check-agreement/action'
 import parts from './parts'
 
 export default () => {
-    const shippingFee = useAtomValue(shippingFeeAtom)
-    const price = useAtomValue(wholePriceAtom) + shippingFee
+    const price = useAtomValue(wholePriceAtom)
     const store = useAtomValue(storeAtom)
     const receiver = useAtomValue(receiverInfoAtom)
     const shipping = useAtomValue(shippingInfoAtom)
@@ -92,7 +90,7 @@ export default () => {
             {PaymentProvider && (
                 <PaymentProvider
                     account={accounts.get(value) as PaymentReceiveAccountType}
-                    amount={price + shippingFee}
+                    amount={price}
                 />
             )}
             <Vexile>
