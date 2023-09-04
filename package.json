@@ -7,7 +7,7 @@
         "dev": "vite",
         "build": "tsc && vite build",
         "preview": "vite preview",
-        "tunnel": "cloudflared tunnel --config ./tunnel.yml run"
+        "update-common-package": "pnpm remove incart-fe-common && pnpm add github:postica-app/incart-fe-common"
     },
     "dependencies": {
         "@actbase/react-daum-postcode": "^1.0.4",
