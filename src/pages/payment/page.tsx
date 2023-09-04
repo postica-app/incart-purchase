@@ -20,13 +20,15 @@ import {
     wholePriceAtom,
     storeAtom,
     cartAtom,
+    shippingFeeAtom,
 } from '@/jotai'
 
 import action from '../check-agreement/action'
 import parts from './parts'
 
 export default () => {
-    const price = useAtomValue(wholePriceAtom)
+    const shippingFee = useAtomValue(shippingFeeAtom)
+    const price = useAtomValue(wholePriceAtom) + shippingFee
     const store = useAtomValue(storeAtom)
     const receiver = useAtomValue(receiverInfoAtom)
     const shipping = useAtomValue(shippingInfoAtom)
@@ -83,14 +85,14 @@ export default () => {
     return (
         <>
             <Vexile gap={3}>
-                <Header1 purple>{price}원</Header1>
+                <Header1 purple>{price + shippingFee}원</Header1>
                 <Header2>판매자의 통장으로 입금해주세요</Header2>
                 {Switch}
             </Vexile>
             {PaymentProvider && (
                 <PaymentProvider
                     account={accounts.get(value) as PaymentReceiveAccountType}
-                    amount={price}
+                    amount={price + shippingFee}
                 />
             )}
             <Vexile>
