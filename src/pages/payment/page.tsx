@@ -85,7 +85,7 @@ export default () => {
     return (
         <>
             <Vexile gap={3}>
-                <Header1 purple>{price + shippingFee}원</Header1>
+                <Header1 purple>{price}원</Header1>
                 <Header2>판매자의 통장으로 입금해주세요</Header2>
                 {Switch}
             </Vexile>
