@@ -30,10 +30,12 @@ export const bottomSheetAtom = atom<React.ReactNode | null>(null)
 
 export const wholePriceAtom = atom((get) => {
     const cart = get(cartAtom)
-    if (cart.length === 0) return 0
+    const shippingInfo = get(shippingInfoAtom)
+    if (cart.length === 0) return shippingInfo?.fee || 0
 
     const prices = cart.map((item) => getCartItemPrice(item))
-    return prices.reduce((a, b) => a + b)
+    const totalProductPrice = prices.reduce((a, b) => a + b)
+    return totalProductPrice + (shippingInfo?.fee || 0)
 })
 
 export const storeAtom = atom(async (get) => {
