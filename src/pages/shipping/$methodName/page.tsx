@@ -12,17 +12,18 @@ import {
 } from 'incart-fe-common'
 import { useNavigate, useParams } from 'react-router-dom'
 import { Hexile, Vexile } from '@haechi/flexile'
-import { useAtom, useAtomValue } from 'jotai'
+import { useAtom, useAtomValue, useSetAtom } from 'jotai'
 import { useEffect, useMemo } from 'react'
 import { useFormik } from 'formik'
 
-import { cartAtom, shippingInfoAtom } from '@/jotai'
+import { cartAtom, shippingFeeAtom, shippingInfoAtom } from '@/jotai'
 import { getCachedStoreInfo } from '@/functions'
 import { Pform } from '@/components'
 import Parts from './parts'
 
 export default () => {
     const [shippingInfo, setShippingInfo] = useAtom(shippingInfoAtom)
+    const setShippingFee = useSetAtom(shippingFeeAtom)
     const shippingMethodName = useParams().methodName!
     const cart = useAtomValue(cartAtom)
     const goto = useNavigate()
@@ -69,6 +70,9 @@ export default () => {
             return errors
         },
         onSubmit(values) {
+            if (!shippingMethod) return
+            setShippingFee(shippingMethod.price)
+
             if (shippingMethod?.form.address === 'no') {
                 setShippingInfo({
                     message: values.message,

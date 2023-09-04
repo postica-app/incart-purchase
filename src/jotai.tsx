@@ -28,12 +28,14 @@ export const receiverInfoAtom = atomWithStorage<ReceiverInfoType | null>(
 
 export const bottomSheetAtom = atom<React.ReactNode | null>(null)
 
+export const shippingFeeAtom = atomWithStorage('SHIPPING_FEE', 0)
+
 export const wholePriceAtom = atom((get) => {
     const cart = get(cartAtom)
     if (cart.length === 0) return 0
 
     const prices = cart.map((item) => getCartItemPrice(item))
-    return prices.reduce((a, b) => a + b)
+    return prices.reduce((a, b) => a + b) + get(shippingFeeAtom)
 })
 
 export const storeAtom = atom(async (get) => {

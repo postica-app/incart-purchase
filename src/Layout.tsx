@@ -27,6 +27,9 @@ export default () => {
 
     return (
         <styles.Wrapper padding={6} gap={3}>
+            <styles.BrandInfoText>
+                인카트 및 포스티카는 상품 판매의 당사자가 아닙니다
+            </styles.BrandInfoText>
             <Toaster />
             <BottomSheet />
             <styles.ContentWrapper gap={6} filly>
